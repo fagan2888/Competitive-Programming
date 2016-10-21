@@ -1,0 +1,86 @@
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+int d1[100000]={0},d2[100000]={0},d3[100000]={0},d4[100000]={0},d5[100000]={0},d6[100000]={0},d7[100000]={0},d8[100000]={0},d9[100000]={0},d0[100000]={0};
+int main()
+{
+	int n,m,i,dig,x;
+	scanf("%d%d",&n,&m);
+	char s[n+1];
+	scanf(" %s",s);
+	dig=s[i]-'0';
+	d0[0]=abs(0-dig);
+	d1[0]=abs(1-dig);
+	d2[0]=abs(2-dig);
+	d3[0]=abs(3-dig);
+	d4[0]=abs(4-dig);
+	d5[0]=abs(5-dig);
+	d6[0]=abs(6-dig);
+	d7[0]=abs(7-dig);
+	d8[0]=abs(8-dig);
+	d9[0]=abs(9-dig);
+	for(i=1;i<strlen(s);i++)
+	{
+		dig=s[i]-'0';
+		d0[i]=d0[i-1]+abs(0-dig);
+		d1[i]=d1[i-1]+abs(1-dig);
+		d2[i]=d2[i-1]+abs(2-dig);
+		d3[i]=d3[i-1]+abs(3-dig);
+		d4[i]=d4[i-1]+abs(4-dig);
+		d5[i]=d5[i-1]+abs(5-dig);
+		d6[i]=d6[i-1]+abs(6-dig);
+		d7[i]=d7[i-1]+abs(7-dig);
+		d8[i]=d8[i-1]+abs(8-dig);
+		d9[i]=d9[i-1]+abs(9-dig);
+	}
+	for(i=0;i<m;i++)
+	{
+		scanf("%d",&x);
+		if(x==1)
+		{
+			printf("0\n");
+			continue;
+		}
+		if((s[x-1]-'0')==0)
+		{
+			printf("%d\n",d0[x-1]);
+		}
+		if((s[x-1]-'0')==1)
+		{
+			printf("%d\n",d1[x-1]);
+		}
+		if((s[x-1]-'0')==2)
+		{
+			printf("%d\n",d2[x-1]);
+		}
+		if((s[x-1]-'0')==3)
+		{
+			printf("%d\n",d3[x-1]);
+		}
+		if((s[x-1]-'0')==4)
+		{
+			printf("%d\n",d4[x-1]);
+		}
+		if((s[x-1]-'0')==5)
+		{
+			printf("%d\n",d5[x-1]);
+		}
+		if((s[x-1]-'0')==6)
+		{
+			printf("%d\n",d6[x-1]);
+		}
+		if((s[x-1]-'0')==7)
+		{
+			printf("%d\n",d7[x-1]);
+		}
+		if((s[x-1]-'0')==8)
+		{
+			printf("%d\n",d8[x-1]);
+		}
+		if((s[x-1]-'0')==9)
+		{
+			printf("%d\n",d9[x-1]);
+		}
+	}
+return 0;
+}
